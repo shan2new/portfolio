@@ -21,8 +21,11 @@ const Home = () => (
           <Icon as={FaLinkedin} boxSize={6} color="#0A66C2" />
         </Link>
       </Flex>
-      <Text fontSize="lg" color={'gray.500'}>
-            Senior Software Engineer
+      <Text fontSize="xl" textAlign="center">
+          (Senior Software Engineer)
+        </Text>
+      <Text fontSize="m" textAlign="center">
+          True full-stack experience of creating Products from scratch to scale
         </Text>
       <VStack spacing={4} mt={4}>
         <HStack spacing={4}>
