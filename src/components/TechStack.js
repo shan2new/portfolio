@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, VStack, useColorModeValue } from '@chakra-ui/react';
 import { FaAws, FaReact, FaVuejs, FaJs, FaPython } from 'react-icons/fa';
-import { SiRedux, SiTypescript, SiNestjs, SiExpress, SiDjango, SiPostgresql, SiMongodb, SiRedis, SiAmazonaws, SiFlask, SiReact, SiBitbucket, SiJenkins, SiCodedeploy, SiDocker } from 'react-icons/si';
+import { SiRedux, SiTypescript, SiNestjs, SiExpress, SiDjango, SiPostgresql, SiMongodb, SiRedis, SiAmazonaws, SiFlask, SiReact, SiBitbucket, SiJenkins, SiDocker } from 'react-icons/si';
 import { DiAws } from 'react-icons/di';
 import TechStackSection from './Sections/TechStackSection';
 import TechStackHighlightSection from './Sections/TechStackHighlightSection';
@@ -79,13 +79,14 @@ const techStack = {
     const borderColor = useColorModeValue('gray.300', 'gray.600');
     const hoverBgColor = useColorModeValue('gray.200', 'gray.600');
     const textColor = useColorModeValue('black', 'white');
+    const techItemBgColor = useColorModeValue('gray.50', 'gray.800');
   
     return (
       <Box py={10} px={6}>
         <TechStackHighlightSection sections={sections} categoryColors={categoryColors} borderColor={borderColor} hoverBgColor={hoverBgColor} textColor={textColor} />
         <VStack spacing={10} align="start">
           {Object.values(techStack).map(section => (
-            <TechStackSection key={section.title} title={section.title} items={section.items} />
+            <TechStackSection key={section.title} title={section.title} items={section.items} techItemBgColor={techItemBgColor} />
           ))}
         </VStack>
       </Box>
