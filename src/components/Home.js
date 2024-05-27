@@ -10,7 +10,7 @@ const Home = () => (
         borderRadius="full"
         boxSize="280px"
         src="/profile.jpg"
-        alt="Shantanu Sinha"
+        alt="Shantanu Sinha - Senior Software Engineer"
         mb={4}
       />
       <Flex alignItems="center" justifyContent="center">
@@ -42,3 +42,4 @@ const Home = () => (
 );
 
 export default Home;
+
