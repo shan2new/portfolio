@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, Heading, Text, Link, VStack, Button, HStack, Icon, Tooltip } from '@chakra-ui/react';
 import { FaLinkedin, FaWhatsapp, FaApple, FaMapMarkerAlt } from 'react-icons/fa';
 import Flag from 'react-world-flags';
+import StatusCTA from './Sections/InterviewStatusCTA';
 
 const Contact = () => (
   <Box textAlign="center" py={10} px={6}>
@@ -9,6 +10,7 @@ const Contact = () => (
       Contact Me
     </Heading>
     <VStack spacing={4} mt={4}>
+      <StatusCTA/>
       <Text fontSize="lg">Email: <Link href="mailto:shantanusinha95@gmail.com" color="teal.500">shantanusinha95@gmail.com</Link></Text>
       <Text fontSize="lg">Phone: <Link href="tel:+918377992599" color="teal.500">+91 83779 92599</Link></Text>
       <Text fontSize="lg">

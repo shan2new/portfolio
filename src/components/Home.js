@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Heading, Text, Button, VStack, HStack, Image, Link, Icon, Flex } from '@chakra-ui/react';
 import { FaLinkedin } from 'react-icons/fa';
+import StatusCTA from './Sections/InterviewStatusCTA';
 import { Link as RouterLink } from 'react-router-dom';
 
 const Home = () => (
@@ -21,6 +22,7 @@ const Home = () => (
           <Icon as={FaLinkedin} boxSize={6} color="#0A66C2" />
         </Link>
       </Flex>
+      <StatusCTA />
       <Text fontSize="xl" textAlign="center">
           (Senior Software Engineer)
         </Text>
