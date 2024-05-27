@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes, NavLink as RouterNavLink } from 'react-router-dom';
+import { React, useEffect} from 'react';
+import { BrowserRouter as Router, Route, Routes, NavLink as RouterNavLink, useLocation } from 'react-router-dom';
 import { ChakraProvider, Box, Flex, HStack, Button, useColorMode, useColorModeValue, IconButton, Container, Icon } from '@chakra-ui/react';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import { FaHome } from 'react-icons/fa';
@@ -7,6 +7,7 @@ import Home from './components/Home';
 import Work from './components/Work';
 import Contact from './components/Contact';
 import TechStack from './components/TechStack'; // Import TechStack component
+import { initGA, logPageView } from './analytics';
 
 function App() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -15,6 +16,17 @@ function App() {
   const navBg = useColorModeValue("white", "gray.800");
   const shadow = useColorModeValue("md", "dark-lg");
   const activeLinkColor = useColorModeValue("teal.600", "teal.300");
+  
+  useEffect(() => {
+    initGA();
+    logPageView();
+  }, []);
+
+  const location = useLocation();
+
+  useEffect(() => {
+    logPageView();
+  }, [location]);
 
   return (
     <ChakraProvider>
