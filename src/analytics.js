@@ -1,7 +1,7 @@
 import ReactGA from 'react-ga';
 
-export const initGA = () => {
-  ReactGA.initialize(process.env.GOOGLE_ANALYTICS_MEASUREMENT_ID);
+export const initGA = (trackingId) => {
+  ReactGA.initialize(trackingId);
 };
 
 export const logPageView = () => {
