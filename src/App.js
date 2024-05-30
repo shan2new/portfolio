@@ -8,7 +8,6 @@ import Work from './components/Work';
 import Contact from './components/Contact';
 import TechStack from './components/TechStack'; // Import TechStack component
 import { initGA, logPageView } from './analytics';
-import StatusCTA from './components/Sections/InterviewStatusCTA';
 
 function App() {
 
