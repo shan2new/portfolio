@@ -77,12 +77,12 @@ const techStack = {
     useSmoothScroll();
     const sections = Object.values(techStack).map(section => ({ key: section.key, title: section.title }));
     const categoryColors = {
-      Backend: useColorModeValue('teal.200', 'teal.700'),
-      Frontend: useColorModeValue('blue.200', 'blue.700'),
-      'Cloud Services': useColorModeValue('purple.200', 'purple.700'),
-      Mobile: useColorModeValue('green.200', 'green.700'),
-      Microservices: useColorModeValue('orange.200', 'orange.700'),
-      'ciCd': useColorModeValue('pink.200', 'pink.700')
+      backend: useColorModeValue('teal.200', 'teal.700'),
+      frontend: useColorModeValue('blue.200', 'blue.700'),
+      cloudServices: useColorModeValue('purple.200', 'purple.700'),
+      mobile: useColorModeValue('green.200', 'green.700'),
+      microservices: useColorModeValue('orange.200', 'orange.700'),
+      ciCd: useColorModeValue('pink.200', 'pink.700')
     };
     const borderColor = useColorModeValue('gray.300', 'gray.600');
     const hoverBgColor = useColorModeValue('gray.200', 'gray.600');
