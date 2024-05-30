@@ -1,14 +1,16 @@
 import React from 'react';
 import { Box, VStack, useColorModeValue } from '@chakra-ui/react';
-import { FaAws, FaReact, FaVuejs, FaJs, FaPython } from 'react-icons/fa';
+import { FaReact, FaVuejs, FaJs, FaPython } from 'react-icons/fa';
 import { SiRedux, SiTypescript, SiNestjs, SiExpress, SiDjango, SiPostgresql, SiMongodb, SiRedis, SiAmazonaws, SiFlask, SiReact, SiBitbucket, SiJenkins, SiDocker } from 'react-icons/si';
 import { DiAws } from 'react-icons/di';
 import TechStackSection from './Sections/TechStackSection';
 import TechStackHighlightSection from './Sections/TechStackHighlightSection';
+import useSmoothScroll from './Helpers/useSmoothScroll';
 
 const techStack = {
     backend: {
       title: 'Backend',
+      key: 'backend',
       items: [
         { name: 'JavaScript', icon: FaJs, color: '#f0db4f' },
         { name: 'TypeScript', icon: SiTypescript, color: '#007acc' },
@@ -25,6 +27,7 @@ const techStack = {
     },
     frontend: {
       title: 'Frontend',
+      key: 'frontend',
       items: [
         { name: 'JavaScript', icon: FaJs, color: '#f0db4f' },
         { name: 'TypeScript', icon: SiTypescript, color: '#007acc' },
@@ -35,6 +38,7 @@ const techStack = {
     },
     cloudServices: {
       title: 'Cloud Services',
+      key: 'cloudServices',
       items: [
         { name: 'EC2', icon: DiAws, color: '#FF9900' },
         { name: 'ECS', icon: DiAws, color: '#FF9900' },
@@ -45,12 +49,14 @@ const techStack = {
     },
     mobile: {
       title: 'Mobile',
+      key: 'mobile',
       items: [
         { name: 'React Native', icon: SiReact, color: '#61DAFB' }
       ]
     },
     microservices: {
       title: 'Microservices',
+      key: 'microservices',
       items: [
         { name: 'Docker', icon: SiDocker, color: '#2496ED' },
         { name: 'AWS ECS', icon: DiAws, color: '#FF9900' }
@@ -58,6 +64,7 @@ const techStack = {
     },
     ciCd: {
       title: 'CI/CD',
+      key: 'ciCd',
       items: [
         { name: 'Bitbucket Pipelines', icon: SiBitbucket, color: '#0052CC' },
         { name: 'Jenkins', icon: SiJenkins, color: '#D24939' },
@@ -67,14 +74,15 @@ const techStack = {
   };
   
   const TechStack = () => {
-    const sections = Object.values(techStack).map(section => ({ title: section.title }));
+    useSmoothScroll();
+    const sections = Object.values(techStack).map(section => ({ key: section.key, title: section.title }));
     const categoryColors = {
       Backend: useColorModeValue('teal.200', 'teal.700'),
       Frontend: useColorModeValue('blue.200', 'blue.700'),
       'Cloud Services': useColorModeValue('purple.200', 'purple.700'),
       Mobile: useColorModeValue('green.200', 'green.700'),
       Microservices: useColorModeValue('orange.200', 'orange.700'),
-      'CI/CD': useColorModeValue('pink.200', 'pink.700')
+      'ciCd': useColorModeValue('pink.200', 'pink.700')
     };
     const borderColor = useColorModeValue('gray.300', 'gray.600');
     const hoverBgColor = useColorModeValue('gray.200', 'gray.600');
@@ -86,7 +94,7 @@ const techStack = {
         <TechStackHighlightSection sections={sections} categoryColors={categoryColors} borderColor={borderColor} hoverBgColor={hoverBgColor} textColor={textColor} />
         <VStack spacing={10} align="start">
           {Object.values(techStack).map(section => (
-            <TechStackSection key={section.title} title={section.title} items={section.items} techItemBgColor={techItemBgColor} />
+            <TechStackSection key={section.key} sectionId={section.key} title={section.title} items={section.items} techItemBgColor={techItemBgColor} />
           ))}
         </VStack>
       </Box>

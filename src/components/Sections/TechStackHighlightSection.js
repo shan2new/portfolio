@@ -5,7 +5,7 @@ const TechStackHighlightSection = ({ sections, categoryColors, borderColor, hove
   return (
     <Flex wrap="wrap" justifyContent="center" gap={2} pb={6}>
       {sections.map(section => (
-        <a href={`#${section.title.replace(/\s+/g, '').toLowerCase()}`} key={section.title} style={{ textDecoration: 'none' }}>
+        <a href={`#${section.key}`} key={section.key} style={{ textDecoration: 'none' }}>
           <Box
             py={1}
             px={3}
