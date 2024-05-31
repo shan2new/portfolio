@@ -1,43 +1,94 @@
 import React from 'react';
 import { Box, VStack, useColorModeValue } from '@chakra-ui/react';
 import { FaReact, FaVuejs, FaJs, FaPython } from 'react-icons/fa';
-import { SiRedux, SiTypescript, SiNestjs, SiExpress, SiDjango, SiPostgresql, SiMongodb, SiRedis, SiAmazonaws, SiFlask, SiReact, SiBitbucket, SiJenkins, SiDocker } from 'react-icons/si';
+import { SiRedux, SiTypescript, SiNestjs, SiExpress, SiDjango, SiPostgresql, SiMongodb, SiRedis, SiAmazonaws, SiFlask, SiReact, SiBitbucket, SiJenkins, SiDocker, SiMysql, SiSequelize, SiAmazondocumentdb, SiMaterialdesign, SiChakraui } from 'react-icons/si';
 import { DiAws } from 'react-icons/di';
 import TechStackSection from './Sections/TechStackSection';
 import TechStackHighlightSection from './Sections/TechStackHighlightSection';
 import useSmoothScroll from './Helpers/useSmoothScroll';
+import { FaDatabase } from 'react-icons/fa6';
 
 const techStack = {
-    backend: {
-      title: 'Backend',
-      key: 'backend',
-      items: [
-        { name: 'JavaScript', icon: FaJs, color: '#f0db4f' },
-        { name: 'TypeScript', icon: SiTypescript, color: '#007acc' },
-        { name: 'Python', icon: FaPython, color: '#306998' },
-        { name: 'NestJS', icon: SiNestjs, color: '#e0234e' },
-        { name: 'Express', icon: SiExpress, color: '#000000' },
-        { name: 'Django', icon: SiDjango, color: '#092e20' },
-        { name: 'Flask', icon: SiFlask, color: '#000000' },
-        { name: 'PostgreSQL', icon: SiPostgresql, color: '#336791' },
-        { name: 'MongoDB', icon: SiMongodb, color: '#47A248' },
-        { name: 'Redis', icon: SiRedis, color: '#DC382D' },
-        { name: 'Amazon SQS', icon: SiAmazonaws, color: '#FF9900' }
-      ]
-    },
+  backend: {
+    title: 'Backend',
+    key: 'backend',
+    categories: [
+      {
+        title: 'Programming Languages',
+        items: [
+          { 
+            name: 'Node/JavaScript', 
+            icon: FaJs, 
+            color: '#f0db4f',
+            subItems: [
+              { name: 'Express', icon: SiExpress, color: '#000000' },
+              { name: 'NestJS', icon: SiNestjs, color: '#e0234e' },
+            ]
+          },
+          { 
+            name: 'Node/TypeScript', 
+            icon: SiTypescript, 
+            color: '#007acc',
+            subItems: [
+              { name: 'Express', icon: SiExpress, color: '#000000' },
+              { name: 'NestJS', icon: SiNestjs, color: '#e0234e' }
+            ]
+          },
+          { 
+            name: 'Python', 
+            icon: FaPython, 
+            color: '#306998',
+            subItems: [
+              { name: 'Django', icon: SiDjango, color: '#092e20' },
+              { name: 'Flask', icon: SiFlask, color: '#000000' }
+            ]
+          }
+        ]
+      },
+      {
+        title: 'Databases',
+        items: [
+          {
+            name: 'SQL',
+            icon: FaDatabase, 
+            color: '#f0db4f',
+            subItems: [
+              { name: 'PostgreSQL', icon: SiPostgresql, color: '#336791' },
+              { name: 'MySQL', icon: SiMysql, color: '#336791' }
+            ]
+          },
+          {
+            name: 'NoSQL',
+            icon: SiAmazondocumentdb, 
+            color: '#f0db4f',
+            subItems: [
+              { name: 'MongoDB', icon: SiMongodb, color: '#47A248' },
+              { name: 'Redis', icon: SiRedis, color: '#DC382D' }
+            ]
+          }
+        ]
+      },
+      {
+        title: 'Cloud Services',
+        items: [
+          { name: 'Amazon SQS', icon: SiAmazonaws, color: '#FF9900' }
+        ]
+      }
+    ]
+  },
     frontend: {
       title: 'Frontend',
       key: 'frontend',
       items: [
-        { name: 'JavaScript', icon: FaJs, color: '#f0db4f' },
-        { name: 'TypeScript', icon: SiTypescript, color: '#007acc' },
         { name: 'React', icon: FaReact, color: '#61DAFB' },
         { name: 'Vue', icon: FaVuejs, color: '#42b883' },
-        { name: 'Redux', icon: SiRedux, color: '#764ABC' }
+        { name: 'Redux', icon: SiRedux, color: '#764ABC' },
+        { name: 'Material UI', icon: SiMaterialdesign, color: '#764ABC' },
+        { name: 'Chakra UI', icon: SiChakraui, color: '#764ABC' }
       ]
     },
     cloudServices: {
-      title: 'Cloud Services',
+      title: 'Cloud Services(AWS)',
       key: 'cloudServices',
       items: [
         { name: 'EC2', icon: DiAws, color: '#FF9900' },
@@ -94,7 +145,7 @@ const techStack = {
         <TechStackHighlightSection sections={sections} categoryColors={categoryColors} borderColor={borderColor} hoverBgColor={hoverBgColor} textColor={textColor} />
         <VStack spacing={10} align="start">
           {Object.values(techStack).map(section => (
-            <TechStackSection key={section.key} sectionId={section.key} title={section.title} items={section.items} techItemBgColor={techItemBgColor} />
+            <TechStackSection key={section.key} sectionId={section.key} title={section.title} items={section.items} categories={section.categories} techItemBgColor={techItemBgColor} />
           ))}
         </VStack>
       </Box>

@@ -24,7 +24,7 @@ const Home = () => (
       </Flex>
       <StatusCTA />
       <Text fontSize="xl" textAlign="center">
-          (Senior Software Engineer(SDE3))
+          (Senior Software Engineer - SDE3)
         </Text>
       <Text fontSize="m" textAlign="center">
           True full-stack experience of creating Products from scratch to scale
