@@ -1,14 +1,15 @@
 import React from 'react';
 import { Flex, Text } from '@chakra-ui/react';
-import { FaCheckCircle, FaTimesCircle } from 'react-icons/fa';
+import { FaArrowAltCircleRight, FaCheckCircle, FaTimesCircle } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import { FaCheck } from 'react-icons/fa6';
 
 const StatusCTA = () => {
   const status = 'open'; // hardcoded status
 
   const checkboxVariants = {
-    hidden: { opacity: 0, rotate: -40, scale: 0 },
-    visible: { opacity: 1, rotate: 0, scale: 1},
+    hidden: { opacity: 1, x: -10 },
+    visible: { opacity: 1, x: 0 },
   };
 
   return (
@@ -19,9 +20,9 @@ const StatusCTA = () => {
             initial="hidden"
             animate="visible"
             variants={checkboxVariants}
-            transition={{ duration: 1, repeat: Infinity, repeatType: 'reverse' }}
+            transition={{ duration: 0.6, repeat: Infinity, repeatType: 'reverse' }}
           >
-            <FaCheckCircle size={20} style={{ marginRight: '8px' }} />
+            <FaArrowAltCircleRight size={20} style={{ marginRight: '8px' }} />
           </motion.div>
           <Text fontSize="md" fontWeight="bold">
             OPEN TO WORK

@@ -9,7 +9,8 @@ const Home = () => (
     <VStack spacing={6}>
       <Image
         borderRadius="full"
-        boxSize="280px"
+        objectFit={'cover'}
+        boxSize="400px"
         src="/profile.jpg"
         alt="Shantanu Sinha - Senior Software Engineer"
         mb={4}
@@ -27,7 +28,7 @@ const Home = () => (
           (Senior Software Engineer - SDE3)
         </Text>
       <Text fontSize="m" textAlign="center">
-          True full-stack experience of creating Products from scratch to scale
+          All Rounder Software Engineer
         </Text>
       <VStack spacing={4} mt={4}>
         <HStack spacing={4}>
